@@ -4,7 +4,7 @@ import Lightbox from './Lightbox';
 
 // El ID de la carpeta raíz de SHAFT ML. 
 // En producción, debería venir de una variable de entorno, pero por simplicidad se puede hardcodear si la carpeta es pública.
-const PARENT_FOLDER_ID = "YOUR_MAIN_DRIVE_FOLDER_ID"; 
+const PARENT_FOLDER_ID = "1lazvFFIr9KFBM8nEbAgjWic7SKXQvEez"; 
 
 const Gallery = () => {
   const [folders, setFolders] = useState<DriveFolder[]>([]);
