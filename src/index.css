@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-base: #050505;
+  --color-accent: #FF6B00;
+  
+  --font-display: "Oswald", "Bebas Neue", sans-serif;
+  --font-body: "Roboto", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-base text-white font-body antialiased selection:bg-accent selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display uppercase tracking-wider;
+  }
+}
