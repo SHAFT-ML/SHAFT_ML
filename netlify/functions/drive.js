@@ -1,7 +1,7 @@
 // netlify/functions/drive.js
 // Esta función corre en los servidores seguros de Netlify, NUNCA en el navegador del usuario.
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
   const { queryStringParameters } = event;
   const action = queryStringParameters.action;
   
