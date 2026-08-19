@@ -28,9 +28,9 @@ export const getFolders = async (parentId: string): Promise<DriveFolder[]> => {
     
     // Mock Data
     return [
-      { id: 'mock-1', name: '2026-08-15_RodadaNocturna', createdTime: '2026-08-15T22:00:00.000Z' },
-      { id: 'mock-2', name: '2026-08-01_Curva26', createdTime: '2026-08-01T10:00:00.000Z' },
-      { id: 'mock-3', name: '2026-07-20_TrackDay', createdTime: '2026-07-20T08:00:00.000Z' },
+      { id: 'mock-1', name: 'Rodada Nocturna_15 de agosto de 2026', createdTime: '2026-08-15T22:00:00.000Z' },
+      { id: 'mock-2', name: 'Curva 26_1 de agosto de 2026', createdTime: '2026-08-01T10:00:00.000Z' },
+      { id: 'mock-3', name: 'Día de pista_19 de julio de 2026', createdTime: '2026-07-20T08:00:00.000Z' },
     ];
   }
 };
@@ -62,21 +62,18 @@ export const getDownloadUrl = (fileId: string) => {
   return `https://drive.google.com/uc?export=download&id=${fileId}`;
 };
 
-// Función de utilidad para mostrar nombres de carpetas
+// Función de utilidad para mostrar nombres de carpetas.
+// El formato esperado en Google Drive es: "Nombre del evento_Fecha" (ej: "Día de pista_19 de julio de 2026")
 export const formatEventName = (rawName: string) => {
   const parts = rawName.split('_');
   if (parts.length >= 2) {
-    const dateStr = parts[0];
-    const eventName = parts.slice(1).join(' ');
+    // La primera parte es el nombre del evento
+    const eventName = parts[0];
+    // La segunda parte (y todo lo demás) es la fecha
+    const dateStr = parts.slice(1).join(' ');
     
-    try {
-      const date = new Date(dateStr);
-      const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' };
-      const formattedDate = date.toLocaleDateString('es-ES', options);
-      return { date: formattedDate, name: eventName };
-    } catch(e) {
-      return { date: 'Fecha', name: rawName };
-    }
+    return { date: dateStr, name: eventName };
   }
-  return { date: 'Evento', name: rawName };
+  // Si alguien crea una carpeta sin el "_", devolvemos esto por defecto:
+  return { date: 'Próximamente', name: rawName };
 };
