@@ -23,7 +23,7 @@ function App() {
             <a href="https://instagram.com/el_de_la_n160_" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-accent transition-colors">
               Instagram
             </a>
-            <a href="#" className="text-gray-400 hover:text-accent transition-colors">
+            <a href="https://wa.me/525573985103" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-accent transition-colors">
               WhatsApp
             </a>
           </div>
