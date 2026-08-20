@@ -60,7 +60,7 @@ const Services = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <a href="#contacto" className="inline-block bg-white text-base font-display text-lg px-8 py-3 uppercase tracking-widest hover:bg-accent hover:text-white transition-colors duration-300">
+          <a href="https://instagram.com/el_de_la_n160_" target="_blank" rel="noreferrer" className="inline-block bg-white text-base font-display text-lg px-8 py-3 uppercase tracking-widest hover:bg-accent hover:text-white transition-colors duration-300">
             Hablemos de tu Proyecto
           </a>
         </div>
